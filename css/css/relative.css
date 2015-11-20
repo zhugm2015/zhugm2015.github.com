@@ -1,0 +1,38 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+#container{
+    margin: 50px;
+    padding: 20px;
+    background: blanchedalmond;
+}
+
+#d1,
+#d2,
+#d3{
+    padding: 20px;
+    margin: 50px;
+}
+
+#d1{
+    position: relative;
+    top:200px;
+    left:200px;
+    background: paleturquoise;
+    border: 1px dashed red;
+}
+
+#d2{
+    background: lightyellow;
+    border: 1px dashed red;
+}
+
+#d3{
+    background: url("../image/1.png");
+    border: dashed 1px blueviolet;
+    border-bottom: dashed 1px black;
+
+
+}

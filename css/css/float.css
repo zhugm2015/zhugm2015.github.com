@@ -1,0 +1,39 @@
+*
+{
+    margin: 0;
+    padding: 0;
+}
+
+#container
+{
+    background:palegoldenrod;
+    padding: 20px;
+/*    margin: 20px;添加后影响浮动效果*/
+  /*  border: dashed 2px ;*/
+}
+/*cler解决全都浮动出现的collapse问题*/
+#clear
+{
+    clear: both;
+}
+
+#d1
+{
+    background: lightpink;
+    float: left;
+    border: dashed 3px;
+}
+
+#d2
+{
+    background: lightgoldenrodyellow;
+    float:right;
+    border: dashed 3px;
+}
+
+#d3
+{
+    background: paleturquoise;
+    border: dashed 3px;
+    float: left;
+}

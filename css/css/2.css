@@ -1,0 +1,16 @@
+body
+{
+    height: 2000px;
+    /*background-image: url("../image/pictrue1.jpg");
+    background-position: 50px 200px;
+    background-attachment: scroll;
+    background-repeat: repeat-y;*/
+    background:url("../image/2.jpg") center repeat-y;
+
+}
+
+
+p{
+    background: deeppink;
+    padding: 20px;
+}
