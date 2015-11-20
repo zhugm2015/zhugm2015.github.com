@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="js/jquery-1.11.3.js"></script>
+    <script>
+        // $(selector).action();
+        $(function() {
+            $(':input').blur(function() { // focus
+                $('p').fadeToggle(3000);
+            });
+            $('tr:even').css('background', '#ffc');
+            $('tr:odd').css('background', '#ccf');
+            $('button').click(function() {
+//                alert($(':input').val());//?
+                $('p').attr('style', $('p').attr('style') +'border: 1px solid #333');
+            })
+        });
+    </script>
+</head>
+<body>
+<button>button</button>
+<br/>
+<p style="height: 300px; background: #fcc;"><b>click...</b></p>
+email: <input name="" id="email"/>
+<table>
+    <tr>
+        <th>h1</th>
+        <th>h2</th>
+        <th>h3</th>
+        <th>h4</th>
+        <th>h5</th>
+    </tr>
+    <tr>
+        <td>d1</td>
+        <td>d2</td>
+        <td>d3</td>
+        <td>d4</td>
+        <td>d5</td>
+    </tr>
+    <tr>
+        <td>d1</td>
+        <td>d2</td>
+        <td>d3</td>
+        <td>d4</td>
+        <td>d5</td>
+    </tr>
+    <tr>
+        <td>d1</td>
+        <td>d2</td>
+        <td>d3</td>
+        <td>d4</td>
+        <td>d5</td>
+    </tr>
+</table>
+</body>
+</html>

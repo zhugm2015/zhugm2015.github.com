@@ -1,0 +1,58 @@
+<!--jQuery 语法
+jQuery 语法是为 HTML 元素的选取编制的，可以对元素执行某些操作。
+基础语法是：$(selector).action()
+    -美元符号定义 jQuery
+    -选择符（selector）“查询”和“查找” HTML 元素
+    -jQuery 的 action() 执行对元素的操作
+示例
+    $(this).hide() - 隐藏当前元素
+    $("p").hide() - 隐藏所有段落
+    $("p.test").hide() - 隐藏所有 class="test" 的段落
+    $("#test").hide() - 隐藏所有 id="test" 的元素
+文档就绪函数
+您也许已经注意到在我们的实例中的所有 jQuery 函数位于一个 document ready 函数中：
+    $(document).ready(function(){
+    --- jQuery functions go here ----
+    });-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript" src="js/jquery-1.11.3.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){                     //文档就绪函数
+            $("button").click(function(){
+               // $(this).hide();                            //隐藏当前元素
+                //$("p").hide();                             //隐藏所有段落
+               // $("p.test1").hide();                       //隐藏所有class="test1"的段落
+                $("p#test2").hide(1000);
+               /* $("p#test2").hide(1000,function(){         // 隐藏所有 id="test" 的元素
+                    alert("The paragraph is now hidden");      //当动画 100% 完成后，即调用 Callback 函数。
+                });  */
+                $("p").css("background-color","red");   //把所有 p 元素的背景颜色更改为红色：
+                $("p.test1").css({"background-color":"green","font-size":"200%"});   //把所有 p 元素的背景颜色更改为红色：
+                $("div").fadeTo("slow",0.25);
+                $("p.test1").toggle();                      //切换
+                //$("p").html("change");                      //html()函数改变所匹配的HTML元素的内容（innerHTML）。
+                //$("p").after("123456");                     //after() 函数在所有匹配的元素之后插入HTML内容。
+                //$("p").append("<b>3wschool</b>.");          //append()函数向所匹配的HTML元素内部追加内容。
+                $("#idt0").width("500px");
+            });
+        });
+    </script>
+</head>
+
+<body>
+<div id="idt0" style="background:yellow;width:300px;height:300px">
+    <button type="button">点击这里查看淡出效果</button>
+</div>
+<h2 class="test1">this is a headline0</h2>
+<p class="test1">this is a paragraphy1.</p>
+<p id="test2">this is another paragraphy2.</p>
+<p>this is a paragraph3.</p>
+<p>this is a paragraph4.</p>
+<!--<button type="button">click me</button>-->
+</body>
+
+</html>

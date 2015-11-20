@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    //document.write(Date());
+    var minutes = 1000*60;   //一分钟有60s，60s*1000=60000ms
+    var hours = minutes*60; //一小时有60min
+    var days = hours*24;    //一天有24小时，
+    var years = days*365;
+    var d = new Date();
+    var t = d.getTime();    //返回 1970 年 1 月 1 日至今的毫秒数。
+    var y = t/years;
+    document.write("It's been: " + y + " years since 1970/01/01!");
+
+    document.write("d.getDate()=" + d.getDate());
+    document.write("d.getTime()=" + d.getTime());
+    d.getFullYear(2015,11,9);
+    document.write(d);
+
+    var weekday = new Array(7);
+    weekday[0] = "星期日";
+    weekday[1] = "星期一";
+    weekday[2] = "星期二";
+    weekday[3] = "星期三";
+    weekday[4] = "星期四";
+    weekday[5] = "星期五";
+    weekday[6] = "星期六";
+    document.write("今天是" + weekday[d.getDay()]);
+
+
+</script>
+
+</body>
+</html>

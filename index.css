@@ -1,0 +1,65 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.clear{
+    clear:both;
+}
+
+#wrapper
+{
+  /*  width: 1000px;*/
+    width: auto;
+    
+    background: lavenderblush;
+}
+
+#resume
+{
+    width: auto;
+    height:200px;
+    margin: auto;
+ /*   background: beige;*/
+
+}
+
+#content
+{
+    height: 200px;
+
+}
+
+#left
+{
+    float: left;
+    width: 500px;
+    height: 150px;
+/*    background: pink;*/
+}
+
+#right
+{
+    float: left;
+    width: 500px;
+    height: 150px;
+}
+#footer1{
+    width: auto;
+    height: 100px;
+    border: dashed 1px mediumvioletred;
+    margin: 10px;
+    padding:10px;
+
+}
+#footer
+{
+    width: auto;
+    height: 100px;
+/*    background:mistyrose ;*/
+}
+
+#pre
+{
+    color: blue;
+}

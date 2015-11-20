@@ -1,0 +1,89 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background: #F1F5F8;
+}
+
+.clear{
+    clear: both;
+}
+
+#header{
+    background: #0078D8;
+    height: 360px;
+}
+
+#header .content{
+    margin: auto;
+    width: 740px;
+    height: 360px;
+    position: relative;/*已定位*/
+
+}
+
+#logo{
+    //background:url("../image/logo.png") ;
+    width: 345px;
+    height: 124px;
+    position:absolute;
+    top:50%;
+    margin-top: -62px;  /*124/2=62*/
+}
+
+#logo1{
+    width: 340px;
+    height: 359px;
+    float:right;
+
+}
+
+#title{
+    width: 202px;
+    height: 26px;
+    color:white;
+
+}
+
+#name{
+    width: 202px;
+    height: 35px;
+    margin-top: 18px;
+}
+
+#email{
+    width: 202px;
+    height: 35px;
+    margin-top: 18px;
+}
+
+#password{
+    width: 202px;
+    height: 35px;
+    margin-top: 18px;
+}
+
+
+#content {
+    /*text-align: center;*//*水平居中*/
+    background: #fcc;
+    width: 740px;
+    margin: 50px auto;
+    height: 360px;
+    /*line-height: 360px;*//*垂直居中*/
+}
+
+#footer{
+    background: #ddd;
+    padding-bottom: 60px;
+    height: 41px;
+
+}
+
+
+
+
+
+

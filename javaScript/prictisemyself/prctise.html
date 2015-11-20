@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript">
+        function message()
+        {
+            alert("该提示框是通过onload事件调用的");
+        }
+    </script>
+</head>
+<body onload="message()">
+<script type="text/javascript">
+    document.write("该消息在页面加载时输出。");
+
+</script>
+<p>当页面载入时，会执行位于 body 部分的 JavaScript。当被调用时，位于 head 部分的 JavaScript 才会被执行。</p>
+</body>
+</html>
