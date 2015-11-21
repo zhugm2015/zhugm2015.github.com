@@ -1,38 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component name="dataSourceStorage">
-  <data-source name="MySQL - @localhost" uuid="e1ccba48-211c-4f96-ab69-5a31d1c16ee6">
-    <database-info product="MySQL" version="5.1.66-community" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
+  <data-source name="MySQL - @localhost" uuid="520fad92-d875-4220-8545-8607ec06d803">
+    <database-info product="MySQL" version="5.1.58-community" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
       <extra-name-characters>#@</extra-name-characters>
       <identifier-quote-string>`</identifier-quote-string>
     </database-info>
     <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower"/>
-    <schema name="" catalog="demo"/>
-    <schema name="" catalog="demo1"/>
     <schema name="" catalog="scott"/>
-    <table name="student" schema="" catalog="demo" type="TABLE">
-      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
-      <column name="name" sqlType="VARCHAR" precision="20" scale="0" nullable="false" jdbcType="12"/>
-      <column name="age" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
-      <column name="sex" sqlType="VARCHAR" precision="11" scale="0" nullable="true" jdbcType="12"/>
-      <primary-key name="PRIMARY" columns="id"/>
-      <index name="age" unique="true" columns="age"/>
-    </table>
-    <table name="persons" schema="" catalog="demo1" type="TABLE">
-      <column name="Id_P" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
-      <column name="LastName" sqlType="VARCHAR" precision="11" scale="0" nullable="true" jdbcType="12"/>
-      <column name="FirstName" sqlType="VARCHAR" precision="11" scale="0" nullable="true" jdbcType="12"/>
-      <column name="City" sqlType="VARCHAR" precision="11" scale="0" nullable="true" jdbcType="12"/>
-      <column name="Birthday" sqlType="DATE" precision="10" scale="0" nullable="true" jdbcType="91"/>
-      <column name="Age" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
-      <primary-key name="PRIMARY" columns="Id_P"/>
-    </table>
-    <table name="products" schema="" catalog="demo1" type="TABLE">
-      <column name="P_Id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
-      <column name="ProductName" sqlType="VARCHAR" precision="11" scale="0" nullable="true" jdbcType="12"/>
-      <column name="UnitPrice" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
-      <column name="UnitsInStock" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
-      <column name="UnitsOnOrder" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
-    </table>
     <table name="dept" schema="" catalog="scott" type="TABLE">
       <column name="DEPTNO" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
       <column name="DNAME" sqlType="VARCHAR" precision="14" scale="0" nullable="true" jdbcType="12"/>
@@ -49,7 +23,6 @@
       <column name="SAL" sqlType="DOUBLE" precision="7" scale="2" nullable="true" jdbcType="8"/>
       <column name="COMM" sqlType="DOUBLE" precision="7" scale="2" nullable="true" jdbcType="8"/>
       <column name="DEPTNO" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
-      <column name="Wage" sqlType="DOUBLE" precision="22" scale="0" nullable="true" jdbcType="8"/>
       <primary-key name="PRIMARY" columns="EMPNO"/>
       <foreign-key name="FK_emp_deptno" columns="DEPTNO" ref-table="dept" ref-schema="" ref-catalog="scott" ref-columns="DEPTNO" update-rule="3" delete-rule="3" deferrability="2"/>
       <index name="FK_emp_deptno" unique="false" columns="DEPTNO"/>
@@ -58,6 +31,18 @@
       <column name="GRADE" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
       <column name="LOSAL" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
       <column name="HISAL" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+    </table>
+    <table name="spring" schema="" catalog="scott" type="TABLE">
+      <column name="Id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" remarks="5a2m5Y+3" autoIncrement="true"/>
+      <column name="Name" sqlType="VARCHAR" precision="11" scale="0" nullable="true" jdbcType="12" remarks="5aeT5ZCN"/>
+      <column name="Activity" sqlType="VARCHAR" precision="11" scale="0" nullable="true" jdbcType="12" remarks="5Y+C5Yqg5rS75Yqo"/>
+      <primary-key name="PRIMARY" columns="Id"/>
+    </table>
+    <table name="springproject" schema="" catalog="scott" type="TABLE">
+      <column name="Id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" remarks="5a2m5Y+3" autoIncrement="true"/>
+      <column name="Name" sqlType="VARCHAR" precision="11" scale="0" nullable="true" jdbcType="12" remarks="5aeT5ZCN"/>
+      <column name="Activity" sqlType="VARCHAR" precision="11" scale="0" nullable="true" jdbcType="12" remarks="5Y+C5Yqg5rS75Yqo"/>
+      <primary-key name="PRIMARY" columns="Id"/>
     </table>
   </data-source>
 </component>
