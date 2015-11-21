@@ -6,7 +6,48 @@
       <identifier-quote-string>`</identifier-quote-string>
     </database-info>
     <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower"/>
+    <schema name="" catalog="design"/>
     <schema name="" catalog="scott"/>
+    <table name="activity" schema="" catalog="design" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="name" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12" remarks="5rS75Yqo5ZCN56ew"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <exported-key name="fk_enroll_activity_id" table="enroll" schema="" catalog="design" columns="activity_id"/>
+    </table>
+    <table name="admin" schema="" catalog="design" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="username" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12" remarks="55So5oi35ZCN"/>
+      <column name="password" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12" remarks="5a+G56CB"/>
+      <primary-key name="PRIMARY" columns="id"/>
+    </table>
+    <table name="dept" schema="" catalog="design" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="dname" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <exported-key name="fk_student_dept_id" table="student" schema="" catalog="design" columns="dept_id"/>
+    </table>
+    <table name="enroll" schema="" catalog="design" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="student_number" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12" remarks="5a2m5Y+3"/>
+      <column name="student_name" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12" remarks="5aeT5ZCN"/>
+      <column name="activity_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="true" jdbcType="4" remarks="RkvvvIzmtLvliqhJRA=="/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="fk_enroll_activity_id" columns="activity_id" ref-table="activity" ref-schema="" ref-catalog="design" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="fk_enroll_activity_id" unique="false" columns="activity_id"/>
+    </table>
+    <table name="student" schema="" catalog="design" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="sname" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="dept_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="fk_student_dept_id" columns="dept_id" ref-table="dept" ref-schema="" ref-catalog="design" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="fk_student_dept_id" unique="false" columns="dept_id"/>
+    </table>
+    <table name="student_backup" schema="" catalog="design" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="sname" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="dept_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="true" jdbcType="4"/>
+    </table>
     <table name="dept" schema="" catalog="scott" type="TABLE">
       <column name="DEPTNO" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
       <column name="DNAME" sqlType="VARCHAR" precision="14" scale="0" nullable="true" jdbcType="12"/>
@@ -26,6 +67,11 @@
       <primary-key name="PRIMARY" columns="EMPNO"/>
       <foreign-key name="FK_emp_deptno" columns="DEPTNO" ref-table="dept" ref-schema="" ref-catalog="scott" ref-columns="DEPTNO" update-rule="3" delete-rule="3" deferrability="2"/>
       <index name="FK_emp_deptno" unique="false" columns="DEPTNO"/>
+    </table>
+    <table name="emp_backup" schema="" catalog="scott" type="TABLE">
+      <column name="empno" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="ename" sqlType="VARCHAR" precision="10" scale="0" nullable="true" jdbcType="12"/>
+      <column name="deptno" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
     </table>
     <table name="salgrade" schema="" catalog="scott" type="TABLE">
       <column name="GRADE" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
