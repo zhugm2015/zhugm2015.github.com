@@ -82,4 +82,8 @@ CREATE TABLE scott.emp_backup
      FROM scott.emp;
 
 DESC scott.emp;
-SELECT * FROM scott.emp_backup;
+SELECT *
+FROM scott.emp_backup;
+
+
+
