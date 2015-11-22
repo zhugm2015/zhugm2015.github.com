@@ -46,25 +46,90 @@ FROM scott.emp
 WHERE ENAME IS NULL;
 
 
-
 # PART II
 # 1. 返回拥有员工的部门名、部门号。
-SELECT DNAME,DEPTNO FROM scott.dept;
+SELECT
+  d.DNAME,
+  e.ENAME
+FROM scott.dept d, scott.emp e
+WHERE d.DEPTNO = e.DEPTNO;
 # 2. 工资水平多于smith的员工信息。
+SELECT *
+FROM scott.emp
+WHERE (SAL + IFNULL(COMM, 0)) >
+      (
+        SELECT SAL + IFNULL(COMM, 0)
+        FROM emp
+        WHERE ENAME = 'WARD'
+      );
 
 # 3. 返回员工和所属经理的姓名。
-SELECT ENAME ,job FROM scott.emp WHERE JOB='MANAGER';
-# 4. 返回雇员的雇佣日期早于其经理雇佣日期的员工及其经理姓名。
+SELECT
+  ENAME,
+  job
+FROM scott.emp
+WHERE JOB = 'MANAGER';
+
+# 4. 返回雇员的雇佣日期早于其经理雇佣日E期的员工及其经理姓名。
+
 
 # 5. 返回员工姓名及其所在的部门名称。
+SELECT
+  ENAME,
+  DNAME
+FROM scott.emp
+  INNER JOIN scott.dept
+    ON dept.DEPTNO = emp.DEPTNO;
 
 # 6. 返回从事clerk工作的员工姓名和所在部门名称。
+SELECT
+  ENAME,
+  DNAME,
+  JOB
+FROM scott.emp, scott.dept
+WHERE dept.DEPTNO = emp.DEPTNO AND JOB = 'CLERK';
+
 # 7. 返回部门号及其本部门的最低工资。
+SELECT
+  deptno,
+  min(sal + ifnull(comm, 0))
+FROM scott.emp
+GROUP BY DEPTNO;
+
 # 8. 返回销售部(sales)所有员工的姓名。
+SELECT e.ENAME
+FROM scott.emp e, scott.dept d
+WHERE e.DEPTNO = d.DEPTNO AND DNAME = 'sales';
+
 # 9. 返回工资水平多于平均工资的员工。
+
 # 10. 返回与SCOTT从事相同工作的员工。
 # 11. 返回与30部门员工工资水平相同的员工姓名与工资。
+SELECT SAL + IFNULL(COMM, 0)
+FROM scott.emp
+WHERE DEPTNO = 30;
+
+SELECT
+  e.ENAME,
+  e.sal
+FROM scott.emp e
+WHERE SAL + ifnull(COMM, 0) = (
+  SELECT SAL + IFNULL(COMM, 0)
+  FROM scott.emp
+  WHERE DEPTNO = 30
+);
+
+
 # 12. 返回工资高于30部门所有员工工资水平的员工信息。
+SELECT
+  ENAME,
+  SAL + ifnull(e.COMM, 0)
+FROM scott.emp
+WHERE SAL + ifnull(COMM, 0) > (
+  SELECT SAL + IFNULL(COMM, 0)
+  FROM scott.emp
+  WHERE DEPTNO = 30
+);
 # 13. 返回部门号、部门名、部门所在位置及其每个部门的员工总数。
 # 14. 返回员工的姓名、所在部门名及其工资。
 # 15. 返回雇员表中不再同一部门但是从事相同工作的员工信息。
