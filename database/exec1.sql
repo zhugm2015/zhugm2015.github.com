@@ -302,5 +302,15 @@ SELECT
 FROM scott.emp
 GROUP BY JOB;
 # 18. 返回不同部门经理的最低工资。
+SELECT min(sal + ifnull(comm, 0))
+FROM scott.emp
+WHERE JOB = 'manager'
+GROUP BY DEPTNO;
 # 19. 计算出员工的年薪，并且以年薪排序。
+SELECT (sal + ifnull(comm, 0)) * 12
+FROM scott.emp
+ORDER BY 1;
 # 20. 返回工资处于第四级别的员工的姓名。
+SELECT e.ENAME
+FROM scott.emp e, scott.salgrade s
+WHERE (e.SAL + ifnull(e.comm, 0)) BETWEEN s.LOSAL AND s.HISAL AND s.GRADE = 4;
