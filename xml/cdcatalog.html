@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+<script type="text/javascript">
+
+    // Load XML  第一段代码创建了微软的 XML 解析器的一个实例，然后把 XML文件载入了内存。
+    var xml = new ActiveXObject("Microsoft.XMLDOM");
+    xml.async = false;
+    xml.load("cdcatalog.xml");
+
+    // Load XSL 第二段代码创建了解析器的另一个实例，然后把这个 XSL 文件载入了内存。
+    var xsl = new ActiveXObject("Microsoft.XMLDOM");
+    xsl.async = false;
+    xsl.load("cdcatalog.xsl");
+
+    // Transform 最后一行代码使用 XSL 文档转换了 XML 文档，并在浏览器中把结果作为 XHTML 显示出来。
+    document.write(xml.transformNode(xsl));
+
+</script>
+
+</body>
+</html>
