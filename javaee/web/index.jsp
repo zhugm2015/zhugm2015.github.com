@@ -22,6 +22,7 @@
   </select><br/>
   <input type="submit" name="SIGN UP"/>
 </form>
+<%--${requestScope.message}--%>
 <%
   String message= (String) request.getAttribute("message");
   if(message != null)

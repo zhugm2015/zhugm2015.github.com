@@ -8,12 +8,13 @@
     }*/
     if (username.equals("zhangsan") && password.equals("123"))
     {
-        out.print("ok");
-
+        session.setAttribute("username","zhangsan");
+        response.sendRedirect("home.jsp");
     }
     else
     {
         request.setAttribute("message","erro....");
-        request.getRequestDispatcher("index.jsp").forward(request,response);
+        //request.getRequestDispatcher("index.jsp").forward(request,response);
+        response.sendRedirect("index.jsp");
     }
 %>
