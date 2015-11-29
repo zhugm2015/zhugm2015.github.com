@@ -15,7 +15,19 @@
 <form action="signup.jsp">
   username: <input type="text" name="username"/> <br/>
   password: <input type="password" name="password"/><br/>
+  hometown:<select name="hometown" multiple="multiple">
+    <option value="Beijing">Beijing</option>
+    <option value="shanghai">shanghai</option>
+    <option value="shenzhen">shenzhen</option>
+  </select><br/>
   <input type="submit" name="SIGN UP"/>
 </form>
+<%
+  String message= (String) request.getAttribute("message");
+  if(message != null)
+  {
+    out.print(message);
+  }
+%>
 </body>
 </html>
