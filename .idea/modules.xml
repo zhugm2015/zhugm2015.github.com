@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/javase/java se.iml" filepath="$PROJECT_DIR$/javase/java se.iml" />
       <module fileurl="file://$PROJECT_DIR$/javaee/javaee.iml" filepath="$PROJECT_DIR$/javaee/javaee.iml" />
+      <module fileurl="file://$PROJECT_DIR$/javaee2/javaee2.iml" filepath="$PROJECT_DIR$/javaee2/javaee2.iml" />
       <module fileurl="file://$PROJECT_DIR$/jquery/jquery.iml" filepath="$PROJECT_DIR$/jquery/jquery.iml" />
     </modules>
   </component>

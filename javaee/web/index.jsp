@@ -12,7 +12,7 @@
 </head>
 <body>
 <h1>SIGN UP</h1>
-<form action="signup.jsp">
+<form action="signup.jsp" method="post">
   username: <input type="text" name="username"/> <br/>
   password: <input type="password" name="password"/><br/>
   hometown:<select name="hometown" multiple="multiple">
